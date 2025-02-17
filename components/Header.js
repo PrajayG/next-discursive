@@ -12,7 +12,7 @@ export function getStaticProps() {
 export default function Header({ name, props }) {
   return (
     <header className="header">
-          <h1 className="header-title"><a href="/"> PJ GARDEN</a></h1>
+          <h1 className="header-title"><Link href="/">PJ GARDEN</Link></h1>
           <div className="header-search">
             {/* <span>Search box {props} {name}</span> */}
           </div>
