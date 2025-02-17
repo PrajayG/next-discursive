@@ -47,6 +47,7 @@ export default function PostPage({
           <h1 className="text-3xl md:text-5xl dark:text-white text-center mb-12">
             {frontMatter.title}
           </h1>
+          <h1>{frontMatter.Id} hello also this</h1>
           {frontMatter.description && (
             <p className="text-xl mb-4">{frontMatter.description}</p>
           )}

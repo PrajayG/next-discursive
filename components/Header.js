@@ -1,14 +1,26 @@
 import Link from 'next/link';
+import Ticker from './Ticker'
+import { getGlobalData} from '../utils/global-data';
 
-export default function Header({ name }) {
+export function getStaticProps() {
+  const globalData = getGlobalData();
+  console.log('is this running')
+  return {props: { globalData}}
+}
+
+
+export default function Header({ name, props }) {
   return (
-    <header className="pt-20 pb-12">
-      <div className="w-12 h-12 rounded-full block mx-auto mb-4 bg-gradient-conic from-gradient-3 to-gradient-4" />
-      <p className="text-2xl dark:text-white text-center">
-        <Link href="/">
-          <a>{name}</a>
-        </Link>
-      </p>
+    <header className="header">
+          <h1 className="header-title"><a href="/"> PJ GARDEN</a></h1>
+          <div className="header-search">
+            {/* <span>Search box {props} {name}</span> */}
+          </div>
+          <div className="header-nav">
+            <span>ABOUT <span class="symbol"> a</span></span>
+
+          </div>
     </header>
   );
 }
+

@@ -3,15 +3,14 @@
 @tailwind utilities;
 @tailwind variants;
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-primary);
+
+:root {
+  --nav-height: 54px;
+  --textcolor: #000;
+  --hover-bg: #f1f1f1;
+  --active-bg: #dbdbdb;
+  --bg-colour: #C8C2AA;
+  --main-colour: #4D493E;
+  font-size: calc(1rem + 0.2vw);
 }
 
-body {
-  font-family: var(--font-secondary);
-}
