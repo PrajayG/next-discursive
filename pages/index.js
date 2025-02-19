@@ -11,9 +11,8 @@ import SEO from '../components/SEO';
 
 export default function Index({ posts, globalData }) {
   return (
-    <Layout>
+    (<Layout>
       <SEO title={globalData.name} description={globalData.blogTitle} />
-
       <Ticker/>
       <main className="w-full">
 
@@ -26,24 +25,24 @@ export default function Index({ posts, globalData }) {
               <Link
                 as={`/posts/${post.filePath.replace(/\.mdx?$/, '')}`}
                 href={`/posts/[slug]`}
-              >
-                <a className="">
-                  {post.data.date && (
+                className="">
 
-                    <p className="garden-item__date">
-                      <span className="symbol">🝁 </span>
-                      {post.data.date}
-                      <span className="symbol"> 🝁</span>
-                    </p>
+                {post.data.date && (
 
-                  )}
-                  <h2 className="garden-item__title">{post.data.title}</h2>
-                  {post.data.description && (
-                    <p className="garden-item__description">
-                      {post.data.description}
-                    </p>
-                  )}
-                </a>
+                  <p className="garden-item__date">
+                    <span className="symbol">🝁 </span>
+                    {post.data.date}
+                    <span className="symbol"> 🝁</span>
+                  </p>
+
+                )}
+                <h2 className="garden-item__title">{post.data.title}</h2>
+                {post.data.description && (
+                  <p className="garden-item__description">
+                    {post.data.description}
+                  </p>
+                )}
+
               </Link>
             </div>
           ))}
@@ -58,7 +57,7 @@ export default function Index({ posts, globalData }) {
         variant="small"
         className="absolute bottom-0 opacity-20 dark:opacity-10"
       />
-    </Layout>
+    </Layout>)
   );
 }
 
