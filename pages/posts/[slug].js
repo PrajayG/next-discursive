@@ -36,28 +36,27 @@ export default function PostPage({
   globalData,
 }) {
   return (
-    <Layout>
+    <Layout className="post">
       <SEO
         title={`${frontMatter.title} - ${globalData.name}`}
         description={frontMatter.description}
       />
-      <Header name={globalData.name} />
-      <article className="px-6 md:px-0">
+      <article className="post">
         <header>
-          <h1 className="text-3xl md:text-5xl dark:text-white text-center mb-12">
+          <h1>
             {frontMatter.title}
           </h1>
-          <h1>{frontMatter.Id} hello also this</h1>
+          {/* <h1>{frontMatter.Id} </h1> */}
           {frontMatter.description && (
-            <p className="text-xl mb-4">{frontMatter.description}</p>
+            <p className="">{frontMatter.description}</p>
           )}
         </header>
         <main>
-          <article className="prose dark:prose-dark">
+          <article className="post-text">
             <MDXRemote {...source} components={components} />
           </article>
         </main>
-        <div className="grid md:grid-cols-2 lg:-mx-24 mt-12">
+        {/* <div className="grid md:grid-cols-2 lg:-mx-24 mt-12">
           {prevPost && (
             <Link href={`/posts/${prevPost.slug}`}>
               <a className="py-8 px-10 text-center md:text-right first:rounded-t-lg md:first:rounded-tr-none md:first:rounded-l-lg last:rounded-r-lg first last:rounded-b-lg backdrop-blur-lg bg-white dark:bg-black dark:bg-opacity-30 bg-opacity-10 hover:bg-opacity-20 dark:hover:bg-opacity-50 transition border border-gray-800 dark:border-white border-opacity-10 dark:border-opacity-10 last:border-t md:border-r-0 md:last:border-r md:last:rounded-r-none flex flex-col">
@@ -84,7 +83,7 @@ export default function PostPage({
               </a>
             </Link>
           )}
-        </div>
+        </div> */}
       </article>
       <Footer copyrightText={globalData.footerText} />
       <GradientBackground

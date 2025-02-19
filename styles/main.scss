@@ -8,6 +8,12 @@
   font-size: calc(1rem + 0.2vw);
 }
 
+$xxs: 4px;
+$xs: 8px;
+$s: 16px;
+$m: 32px;
+$l: 64px;
+
 $bg-color: #c8c2aa;
 $main-color: #4d493e;
 
@@ -22,37 +28,45 @@ $bg-color-light-2: #d3cebb;
 $bg-color-light-3: #d9d4c4;
 $border-color: rgb(140, 136, 119, 0.4);
 
-$xs: 0;
-$sm: 40rem;
-$md: 52rem;
-$lg: 64rem;
+$mq-xs: 0;
+$mq-sm: 40rem;
+$mq-md: 52rem;
+$mq-lg: 64rem;
 
+$box-shadow-color: #4D493E;
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Symbols:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Faculty+Glyphic&display=swap');
+
+
 
 body {
-
   background-color: ($bg-color);
-  // background: hsl(40, 35%, 40%);
-    //  box-shadow: inset 0 0 40px 10px hsla(0, 0%, 0%, 0.8);
-  //  background:
-  //   	linear-gradient(
-  //           to bottm right,
-  //           hsla(0, 0%, 0%, 0) 40%,
-  //           hsla(0, 0%, 0%, 1)
-  //   	);
-    //  mix-blend-mode: overlay;
+  background-size: 4px 4px;
   background-image: linear-gradient(
       90deg,
       transparent,
       transparent 3px,
-      rgba(0, 0, 0, 0.03) 4px
+      rgba(0, 0, 0, 0.02) 4px
     ),
-    linear-gradient(transparent, transparent 3px, rgba(0, 0, 0, 0.03) 4px) !important;
-  font-family: 'Fira Mono';
+    linear-gradient(transparent, transparent 3px, rgba(0, 0, 0, 0.02) 4px);
+  font-family: 'Fira Sans';
+  min-height: 100vh;
+  box-shadow: inset 0 0 150px rgba($box-shadow-color, .4), inset 0 0 150px rgba($box-shadow-color, .3);
 }
 
 .header {
+  background-size: 4px 4px;
+  background-image: linear-gradient(
+      90deg,
+      transparent,
+      transparent 3px,
+      rgba(0, 0, 0, 0.02) 4px
+    ),
+    linear-gradient(transparent, transparent 2px, rgba(0, 0, 0, 0.02) 2px);
+  box-shadow: inset 0 0 150px rgba($box-shadow-color, .1), inset 0 0 150px rgba($box-shadow-color, .2);
   background-color: $bg-color-light-1;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -72,9 +86,8 @@ body {
 // https://fonts.google.com/noto/specimen/Noto+Sans+Symbols/glyphs
 
 footer {
+  text-align: center;
   // background-color: $bg-color-light-1;
-
-
 }
 
 .garden {
@@ -102,17 +115,16 @@ footer {
     }
 
     &__title {
+      font-family: "Faculty Glyphic", serif;
       font-size: 18px;
       margin-bottom: 8px;
     }
 
     &__description {
-
     }
-
   }
 
-  @media (max-width: $md) {
+  @media (max-width: $mq-md) {
     &-grid {
       grid-template-columns: auto;
     }
@@ -129,9 +141,6 @@ footer {
   background-color: #1c1c1c;
   color: #c8c2aa;
   overflow: hidden;
-  @media only screen and (max-width: 40rem) {
-    top: 57px;
-  }
 
   marquee {
     line-height: 30px;
@@ -149,6 +158,41 @@ footer {
     font-weight: bold;
     padding: 0 20px;
   }
+}
+
+// styling for blog posts
+
+article.post {
+  padding: $m $l;
+  border-top: 2px solid $bg-color-dark-3;
+
+  header {
+
+      h1 {
+        font-family: "Faculty Glyphic", serif;
+        text-align: center;
+        margin-bottom: $s;
+        font-size: 48px;
+
+        @media (max-width: $mq-md) {
+         font-size: 36px;
+        }
+      }
+
+      p {
+        font-size: 16px;
+        text-align: center;
+        margin-bottom: $m;
+
+
+        @media (max-width: $mq-md) {
+          font-size: 14px;
+         }
+
+      }
+
+  }
+
 }
 
 // #navbar {
